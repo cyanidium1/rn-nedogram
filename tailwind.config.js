@@ -1,5 +1,9 @@
 module.exports = {
-  content: ["./App.{js,jsx,ts,tsx}", "./screens/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./App.{js,jsx,ts,tsx}",
+    "./screens/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -8,7 +12,6 @@ module.exports = {
         "retro-purple": "#785fff",
         "retro-turquoise": "#32c8cd",
         "retro-yellow": "#ffb677",
-        // Add more custom colors as needed
       },
     },
   },
