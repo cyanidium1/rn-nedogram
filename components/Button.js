@@ -2,9 +2,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { Text } from "react-native";
 import { TouchableOpacity } from "react-native";
-const Button = ({ text = "add some text" }) => {
+const Button = ({ text = "add some text", click }) => {
   return (
-    <TouchableOpacity className="w-full rounded-full">
+    <TouchableOpacity className="w-full rounded-full" onPress={click}>
       <LinearGradient
         colors={["#ffe329", "#ff005a"]}
         start={{ x: 0, y: 0 }}

@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { View, TextInput, TouchableOpacity, Text } from "react-native";
 
-const PasswordInput = ({ placeholder }) => {
-  const [password, setPassword] = useState("");
+const PasswordInput = ({ set }) => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const [input, setInput] = useState("");
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-
+  const handleInputChange = (input) => {
+    setInput(input);
+    set(input);
+  };
   return (
     <View className="relative my-2">
       <TextInput
         className="bg-yellow-300 w-full p-4 rounded-xl border-2 border-gray-400 outline"
         placeholder={"Password"}
-        value={password}
-        onChangeText={setPassword}
+        value={input}
+        onChangeText={handleInputChange}
         secureTextEntry={!showPassword}
       />
       <TouchableOpacity
