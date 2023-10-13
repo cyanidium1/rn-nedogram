@@ -13,7 +13,7 @@ export default function App() {
   StatusBar.setHidden(true);
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="LoginScreen">
         <Stack.Screen
           name="Home"
           component={Home}

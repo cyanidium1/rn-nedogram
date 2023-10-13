@@ -11,9 +11,10 @@ import Button from "../components/Button";
 import Link from "../components/Link";
 import { useState } from "react";
 import { Keyboard } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {
-  const [login, setLogin] = useState("");
+  const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const onSubmit = () => {
@@ -26,6 +27,7 @@ const LoginScreen = () => {
       password,
     };
     console.log(data);
+    navigation.navigate("Home");
   };
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>

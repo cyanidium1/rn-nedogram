@@ -1,0 +1,12 @@
+<symbol id="sqrs" viewBox="0 0 32 32">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
+        <path stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".8" d="M1 1h7v7H1V1ZM12 1h7v7h-7V1ZM12 12h7v7h-7v-7ZM1 12h7v7H1v-7Z" clip-rule="evenodd"/>
+    </svg>
+</symbol>
+
+<symbol id="profile" viewBox="0 0 32 32">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none">
+        <path stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".8" d="M28 29v-2a4 4 0 0 0-4-4h-8a4 4 0 0 0-4 4v2"/>
+        <path stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".8" d="M20 19a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" clip-rule="evenodd"/>
+    </svg>
+</symbol>

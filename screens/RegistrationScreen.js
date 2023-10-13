@@ -16,7 +16,9 @@ import Link from "../components/Link";
 import bg from "../images/deloreanGIF.gif";
 import Avatar from "../components/Avatar";
 import { Keyboard } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 const RegistrationScreen = () => {
+  const navigation = useNavigation();
   const [login, setLogin] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,6 +33,7 @@ const RegistrationScreen = () => {
       password,
     };
     console.log(data);
+    navigation.navigate("Home");
   };
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>

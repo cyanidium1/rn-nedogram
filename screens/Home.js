@@ -1,40 +1,79 @@
-import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import PostsScreen from "./PostsScreen";
+import CreatePostsScreen from "./CreatePostsScreen";
+import ProfileScreen from "./ProfileScreen";
+import { useNavigation } from "@react-navigation/native";
+import BackButton from "../components/BackButton";
+import LogOut from "../components/LogOut";
+import Icon from "react-native-vector-icons/Feather";
+import AddPostButton from "../components/AddPostButton";
+const Tabs = createBottomTabNavigator();
+
 const Home = () => {
   const navigation = useNavigation();
   return (
-    <View>
-      <LinearGradient
-        colors={["rgba(2,0,36,1)", "rgba(255,0,254,1)", "rgba(0,48,255,1)"]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 0, y: 1 }}
-        className="h-full"
-      >
-        <Text className="text-2xl font-bold tracking-widest text-center text-retro-pink mt-4">
-          Home
-        </Text>
-        <View className="w-3/5 m-auto mt-64">
-          <TouchableOpacity
-            className="bg-[#2a2a2a80] p-1 my-3 rounded-full items-center justify-center"
-            onPress={() => {
-              navigation.navigate("RegistrationScreen");
-            }}
-          >
-            <Text className="text-retro-turquoise text-2xl">Register</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            className="bg-[#2a2a2a80] p-1 my-3 rounded-full items-center justify-center"
-            onPress={() => {
-              navigation.navigate("LoginScreen");
-            }}
-          >
-            <Text className="text-retro-turquoise text-2xl">Login</Text>
-          </TouchableOpacity>
-        </View>
-      </LinearGradient>
-    </View>
+    <Tabs.Navigator
+      screenOptions={{
+        tabBarHideOnKeyboard: true,
+        headerStyle: {
+          backgroundColor: "rgba(0,48,255,1)",
+          borderBottomWidth: 0,
+        },
+        tabBarActiveTintColor: "pink",
+        tabBarInactiveTintColor: "violet",
+        tabBarLabelStyle: {
+          fontSize: 16,
+        },
+        tabBarStyle: [
+          {
+            borderTopWidth: 0,
+            display: "flex",
+            backgroundColor: "rgba(2,0,36,1)",
+          },
+          null,
+        ],
+      }}
+    >
+      <Tabs.Screen
+        name="Posts"
+        options={{
+          tabBarLabel: "",
+          headerTitleAlign: "center",
+          headerTitleStyle: { color: "#ffe329" },
+          headerLeft: () => <BackButton click={navigation.goBack} />,
+          tabBarIcon: () => <Icon name="grid" size={30} color={"white"} />,
+        }}
+        component={PostsScreen}
+      />
+      <Tabs.Screen
+        name="Add post"
+        options={{
+          tabBarLabel: "",
+          headerTitleAlign: "center",
+          headerTitleStyle: { color: "#ffe329" },
+          // title: "Make a post",
+          headerLeft: () => <BackButton click={navigation.goBack} />,
+          tabBarIcon: () => <AddPostButton />,
+        }}
+        component={CreatePostsScreen}
+      />
+      <Tabs.Screen
+        name="Profile"
+        options={{
+          tabBarLabel: "",
+          headerTitleAlign: "center",
+          headerTitleStyle: { color: "#ffe329" },
+          title: "Profile",
+          headerLeft: () => <BackButton click={navigation.goBack} />,
+          headerRight: () => (
+            <LogOut click={() => navigation.navigate("LoginScreen")} />
+          ),
+          tabBarIcon: () => <Icon name="user" size={30} color={"white"} />,
+        }}
+        component={ProfileScreen}
+      />
+    </Tabs.Navigator>
   );
 };
 
