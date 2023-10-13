@@ -17,7 +17,7 @@ const Home = () => {
       screenOptions={{
         tabBarHideOnKeyboard: true,
         headerStyle: {
-          backgroundColor: "rgba(0,48,255,1)",
+          backgroundColor: "#FF00FE",
           borderBottomWidth: 0,
         },
         tabBarActiveTintColor: "pink",
@@ -27,6 +27,7 @@ const Home = () => {
         },
         tabBarStyle: [
           {
+            height: 85,
             borderTopWidth: 0,
             display: "flex",
             backgroundColor: "rgba(2,0,36,1)",

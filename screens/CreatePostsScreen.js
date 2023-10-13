@@ -28,10 +28,15 @@ const CreatePostsScreen = () => {
     console.log({ name, location });
   };
 
+  const onDelete = () => {
+    setLocation("");
+    setName("");
+  };
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <LinearGradient
-        colors={["rgba(0,48,255,1)", "rgba(2,0,36,1)"]}
+        colors={["#FF00FE", "rgba(2,0,36,1)"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
         className="h-full px-4 py-8"
@@ -59,7 +64,10 @@ const CreatePostsScreen = () => {
         </View>
         <Button text={"Post"} click={onSubmit} />
         <View className="flex-1 flex justify-end items-center">
-          <TouchableOpacity className="bg-blue-400 px-6 py-2 rounded-3xl">
+          <TouchableOpacity
+            onPress={onDelete}
+            className="bg-blue-400 px-6 py-2 rounded-3xl"
+          >
             <Icon2 name="trash-2" color="#ffe329" size={30} />
           </TouchableOpacity>
         </View>
