@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyB9lYyk_Mu8iYwjMfpIpCLA7B0F406mmnU";
+
 
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
