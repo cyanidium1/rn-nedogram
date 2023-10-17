@@ -1,28 +1,26 @@
-{
-  "comments": [
-    {
-      "id": 1,
-      "author": "John Doe",
-      "text": "This is a great website!",
-      "date": "2023-10-14"
-    },
-    {
-      "id": 2,
-      "author": "Jane Smith",
-      "text": "I love the content here.",
-      "date": "2023-10-15"
-    },
-    {
-      "id": 3,
-      "author": "Alice Johnson",
-      "text": "This is so informative.",
-      "date": "2023-10-16"
-    },
-    {
-      "id": 4,
-      "author": "Bob Johnson",
-      "text": "Nice work!",
-      "date": "2023-10-17"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "author": "John Doe",
+    "text": "This is a great website!",
+    "date": "2023-10-14"
+  },
+  {
+    "id": 2,
+    "author": "Jane Smith",
+    "text": "I love the content here.",
+    "date": "2023-10-15"
+  },
+  {
+    "id": 3,
+    "author": "Alice Johnson",
+    "text": "This is so informative.",
+    "date": "2023-10-16"
+  },
+  {
+    "id": 4,
+    "author": "Bob Johnson",
+    "text": "Nice work!",
+    "date": "2023-10-17"
+  }
+]

@@ -11,11 +11,12 @@ import { Keyboard } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Icon2 from "react-native-vector-icons/Feather";
 import ImageInput from "../components/ImageInput";
+import { useNavigation } from "@react-navigation/native";
 
 const CreatePostsScreen = () => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
-
+  const navigation = useNavigation();
   const handleNameChange = (text) => {
     setName(text);
   };
@@ -26,6 +27,7 @@ const CreatePostsScreen = () => {
 
   const onSubmit = () => {
     console.log({ name, location });
+    navigation.navigate("ProfileScreen");
   };
 
   const onDelete = () => {

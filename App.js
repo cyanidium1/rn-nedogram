@@ -6,6 +6,8 @@ import { StatusBar } from "react-native";
 import Home from "./screens/Home";
 import RegistrationScreen from "./screens/RegistrationScreen";
 import LoginScreen from "./screens/LoginScreen";
+import CommentsScreen from "./screens/CommentsScreen";
+import MapScreen from "./screens/MapScreen";
 
 const Stack = createStackNavigator();
 
@@ -27,6 +29,16 @@ export default function App() {
         <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CommentsScreen"
+          component={CommentsScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="MapScreen"
+          component={MapScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
